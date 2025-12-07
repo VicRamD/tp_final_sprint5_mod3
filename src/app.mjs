@@ -21,11 +21,11 @@ connectDB();
 
 //ruta absoluta del archivo app.mjs
 const __filename = fileURLToPath(import.meta.url);
-console.log("filename: ", __filename)
+//console.log("filename: ", __filename)
 
 //directorio en que se encuentra el archivo app.mjs
 const __dirname = path.dirname(__filename);
-console.log("dirname: ", __dirname);
+//console.log("dirname: ", __dirname);
 
 //establece la ruta a carpeta views
 app.set('views', path.join(__dirname, 'views')); 

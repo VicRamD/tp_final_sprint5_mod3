@@ -1,5 +1,6 @@
-import {consumirApiExternaDePaises, registrarPaisesAPI} from '../services/paisesService.mjs';
+import {consumirApiExternaDePaises, registrarPaisesAPI, obtenerTodosLosPaises} from '../services/paisesService.mjs';
 import {mapearPaises} from '../models/mapearDatosApi.mjs';
+import {renderizarPaises} from '../views/responsiveView.mjs';
 
 export const consumirAPIExternaDePaisesController = async (req, res) => {
     try {
@@ -21,7 +22,10 @@ export const consumirAPIExternaDePaisesController = async (req, res) => {
     }
 }
 
-export const obtenerTodosLosPaisesController = (req, res) => {
+export const obtenerTodosLosPaisesController = async (req, res) => {
     console.log("en controlador - obtenerTodosLosPaisesController");
-    res.render('dashboard', {titulo: 'hola'});
+    const paises = await obtenerTodosLosPaises();
+    const paisesFormateados = renderizarPaises(paises);
+
+    res.render('dashboard', {titulo: 'Listado de Países', paises: paisesFormateados});
 }

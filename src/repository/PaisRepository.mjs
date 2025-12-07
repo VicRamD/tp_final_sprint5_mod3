@@ -11,7 +11,8 @@ class PaisRepository extends IRepository {
     }
 
     async obtenerTodosLosPaises(){
-        return await Pais.find({});
+        return await Pais.find({capital: {$exists: true}}); 
+        //exist pregunta si tiene el atributo capital, para que no devuelva registros de héroes
     }
 
     async registrarPaisesAPI(listadoPaises){

@@ -15,3 +15,8 @@ export const registrarPaisesAPI = async (listadoPaises) => {
     //console.log(listadoPaises);
     return await PaisRepository.registrarPaisesAPI(listadoPaises);
 }
+
+export const obtenerTodosLosPaises = async () => {
+    console.log("En servicios - obtenerTodosLosPaises");
+    return await PaisRepository.obtenerTodosLosPaises();
+}
