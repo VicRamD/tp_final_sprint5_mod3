@@ -28,13 +28,6 @@ export const mapearPais = (pais) =>{
         creador: 'RAMIREZ DIAZ VICTOR FRANCISCO'
     };
 }
-/*
-    area: Number,
-    poblacion: Number,
-    timezones: [String],
-    creador: String,
-    createdAt: {type: Date, default: Date.now} */
-
 
 export const mapearPaises = (paises) => {
     return paises.map(pais => mapearPais(pais));

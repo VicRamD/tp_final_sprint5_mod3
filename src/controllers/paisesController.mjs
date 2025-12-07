@@ -20,3 +20,8 @@ export const consumirAPIExternaDePaisesController = async (req, res) => {
         });
     }
 }
+
+export const obtenerTodosLosPaisesController = (req, res) => {
+    console.log("en controlador - obtenerTodosLosPaisesController");
+    res.render('dashboard', {titulo: 'hola'});
+}

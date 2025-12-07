@@ -9,7 +9,7 @@ const paisSchema = new mongoose.Schema({
     area: Number,
     poblacion: Number,
     timezones: [String],
-    creador: String,
+    creador: {type: String, default: "RAMIREZ DIAZ VICTOR FRANCISCO"},
     createdAt: {type: Date, default: Date.now}
 });
 
