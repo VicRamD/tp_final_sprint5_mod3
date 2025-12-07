@@ -1,4 +1,4 @@
-import {consumirApiExternaDePaises} from '../services/paisesService.mjs';
+import {consumirApiExternaDePaises, registrarPaisesAPI} from '../services/paisesService.mjs';
 import {mapearPaises} from '../models/mapearDatosApi.mjs';
 
 export const consumirAPIExternaDePaisesController = async (req, res) => {
@@ -10,7 +10,9 @@ export const consumirAPIExternaDePaisesController = async (req, res) => {
         //lista formateada
         const listaFormateada = mapearPaises(listaFiltrada);
 
-        res.status(200).json(listaFormateada);
+        //registrar en la BD
+        const paisesRegistrados = await registrarPaisesAPI(listaFormateada);
+        res.status(200).json(paisesRegistrados);
     } catch (error) {
         res.status(500).send({
             mensaje: 'Error al consumir API',

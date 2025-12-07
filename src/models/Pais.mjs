@@ -15,4 +15,4 @@ const paisSchema = new mongoose.Schema({
 
 //Modelo pais                Nombre   esquema    colección
 const pais = mongoose.model('Pais', paisSchema, 'Grupo-20');
-export default superHero;
+export default pais;
