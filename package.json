@@ -1,0 +1,23 @@
+{
+  "name": "tpfinalsprint5mod3",
+  "version": "1.0.0",
+  "description": "Trabajo practico final del sprint 5 del modulo 3",
+  "main": "app.mjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VicRamD/tp_final_sprint5_mod3.git"
+  },
+  "author": "Victor Francisco Ramirez Diaz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VicRamD/tp_final_sprint5_mod3/issues"
+  },
+  "homepage": "https://github.com/VicRamD/tp_final_sprint5_mod3#readme",
+  "dependencies": {
+    "express": "^5.2.1",
+    "mongoose": "^9.0.1"
+  }
+}
