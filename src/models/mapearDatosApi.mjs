@@ -24,6 +24,7 @@ export const mapearPais = (pais) =>{
         capital: pais.capital,
         fronteras: pais.borders,
         area: pais.area,
+        poblacion: pais.population,
         timezones: pais.timezones,
         creador: 'RAMIREZ DIAZ VICTOR FRANCISCO'
     };

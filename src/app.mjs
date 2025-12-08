@@ -1,5 +1,6 @@
 import express from 'express';
 import {connectDB} from './config/dbConfig.mjs';
+import methodOverride from 'method-override';
 
 import paisesRoutes from './routes/paisesRoutes.mjs';
 
@@ -11,6 +12,14 @@ import { fileURLToPath } from 'url';
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+// Middleware para parsear JSON
+app.use(express.json());
+//Middleware para trabajar con el enctype application/x-www-form-urlencoded por defecto del form
+app.use(express.urlencoded({ extended: true }));
+
+/* Sobreescribir peticiones con ej: ?_method=DELETE */
+app.use(methodOverride('_method'));
 
 //Conexión a MongoDB
 connectDB();

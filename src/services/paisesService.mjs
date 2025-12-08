@@ -16,7 +16,18 @@ export const registrarPaisesAPI = async (listadoPaises) => {
     return await PaisRepository.registrarPaisesAPI(listadoPaises);
 }
 
+export const obtenerPaisPorId = async (id) => {
+    console.log("En servicios - obtenerPaisPorId");
+    return await PaisRepository.obtenerPaisPorId(id);
+}
+
 export const obtenerTodosLosPaises = async () => {
     console.log("En servicios - obtenerTodosLosPaises");
     return await PaisRepository.obtenerTodosLosPaises();
 }
+
+export const crearNuevoPais = async (datosPais) => {
+    console.log("En servicios - crearNuevoPais");
+    return await PaisRepository.crearNuevoPais(datosPais);
+}
+

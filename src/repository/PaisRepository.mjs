@@ -11,6 +11,7 @@ class PaisRepository extends IRepository {
     }
 
     async obtenerTodosLosPaises(){
+        console.log("En repository - obtenerTodosLosPaises");
         return await Pais.find({capital: {$exists: true}}); 
         //exist pregunta si tiene el atributo capital, para que no devuelva registros de héroes
     }
@@ -21,6 +22,17 @@ class PaisRepository extends IRepository {
         return paises;
     }
 
+    async crearNuevoPais(datosPais) {
+        console.log("En repository - crearNuevoPais");
+        return nuevoPais = await Pais.create({
+            nombreComun: datosPais.nombreComun,
+            nombreOficial: datosPais.nombreOficial,
+            capital: datosPais.capital,
+            fronteras: datosPais.fronteras,
+            area: datosPais.area,
+            timezones: datosPais.timezones
+        });
+    }
 }
 
 export default new PaisRepository();
