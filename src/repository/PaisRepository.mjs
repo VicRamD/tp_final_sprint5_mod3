@@ -33,6 +33,11 @@ class PaisRepository extends IRepository {
             timezones: datosPais.timezones
         });
     }
+
+    async eliminarPaisPorID(id){
+        console.log("En repository - eliminarPaisPorID");
+        return await Pais.findByIdAndDelete(id);
+    }
 }
 
 export default new PaisRepository();

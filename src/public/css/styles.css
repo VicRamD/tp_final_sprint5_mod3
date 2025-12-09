@@ -1,0 +1,97 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    background-color: #CDE4B3;
+    display: flex;
+    flex-direction: column;
+    /*justify-content: center;*/
+    align-items: center;
+}
+
+h1 {
+    text-align: center;
+}
+
+/* Colores
+#69D0B3
+#9BDAB3
+#B4DFB3
+#CDE4B3
+#D9CF85
+*/
+
+div.card {
+    padding: 10px;
+    width: 100%;
+    border-width: 4px;
+    border-style: solid;
+    border-style: solid dotted solid dotted;
+    border-radius: 15px;
+    margin: 10px 0px;
+    background-color: #9BDAB3;
+}
+
+div.card li {
+    list-style: none;
+}
+
+a.btn-edit {
+    text-decoration: none;
+}
+
+.btn-delete, .btn-edit {
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 16px;
+  min-height: 40px;
+  outline: 0;
+  padding: 12px 14px;
+  text-align: center;
+  text-rendering: geometricprecision;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+}
+
+.btn-delete {
+    background: #FF4742;
+    border: 1px solid #FF4742;
+}
+
+.btn-edit {
+    background: #2ea44f;
+    border: 1px solid #2ea44f;
+}
+
+.btn-delete:hover,
+.btn-delete:active {
+  background-color: white;
+  background-position: 0 0;
+  color: #FF4742;
+}
+
+.btn-edit:hover,
+.btn-edit:active {
+  background-color: white;
+  background-position: 0 0;
+  color: #2ea44f;
+}
+
+.btn-delete:active, btn-edit:active {
+  opacity: .5;
+}
+

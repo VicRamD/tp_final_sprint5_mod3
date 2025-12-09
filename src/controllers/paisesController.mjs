@@ -1,5 +1,5 @@
 import {consumirApiExternaDePaises, registrarPaisesAPI, obtenerTodosLosPaises,
-    obtenerPaisPorId
+    obtenerPaisPorId, eliminarPaisPorID
 } from '../services/paisesService.mjs';
 import {mapearPaises} from '../models/mapearDatosApi.mjs';
 import {renderizarPaises} from '../views/responsiveView.mjs';
@@ -84,6 +84,35 @@ export const renderizarFormEditarPaisController = async (req, res) => {
     } catch (error) {
         res.status(500).send({
             mensaje: 'Error al buscar país',
+            error: error.message
+        });
+    }
+}
+
+/*--------------------------*/
+
+/**
+ *  Eliminar un país
+ */
+
+export const eliminarPaisPorIDController = async (req, res) => {
+    try {
+        const {id} = req.params;
+        console.log("en controlador - eliminarPaisPorIDController");
+        //console.log(id);
+
+        const paisEliminado = await eliminarPaisPorID(id);
+        console.log("País Eliminado", paisEliminado);
+
+        if(!paisEliminado){
+            return res.status(404).send({mensaje: 'País no encontrado'});
+        }  
+
+        res.redirect('/api/paises');
+
+    } catch (error) {
+        res.status(500).send({
+            mensaje: 'Error al eliminar un país',
             error: error.message
         });
     }

@@ -1,6 +1,6 @@
 <body>
     <% paises.forEach(pais => { %>
-        <div>
+        <div class="card">
             <ul>
                 <li><strong>Nombre:</strong> <%= pais.nombre %></li>
                 <li><strong>Capital:</strong> <%= pais.capital %></li>
@@ -9,10 +9,18 @@
                 <li><strong>Población:</strong> <%= pais.poblacion %></li>
                 <li><strong>Timezones:</strong> <%= pais.timezones %></li>
                 <li><strong>Creador:</strong> <%= pais.creador %></li>
-                <li ><a href="/api/paises/<%= pais.id %>/editar">Editar</a></li>
-            </ul>   
+            </ul>
+            <div>
+                <a class="btn-edit" href="/api/paises/<%= pais.id %>/editar">Editar</a>
+                <form method="post" action="/api/paises/<%= pais.id %>?_method=DELETE" class="w-full p-2" id="formDelete">
+                    <input type="hidden" name="heroeID">
+                    <input type="submit" class="btn-delete" value="Eliminar" id="btnDelete">
+                </form>   
+            </div>
+            
         </div>
-    <% }) %>        
+    <% }) %>     
+    <script src="/js/dashboardFunctions.mjs"></script>   
 </body>
 
 
