@@ -177,4 +177,9 @@ form#formPais button[type="button"] {
   font-size: 16px;
 }
 
+p.errorMesage {
+  color: red;
+  margin: 5px;
+}
+
 /* ------------ */

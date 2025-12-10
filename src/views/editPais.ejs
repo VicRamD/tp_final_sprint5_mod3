@@ -11,12 +11,11 @@
             <input type="text" name="paisFrontera" id="idPaisFrontera" placeholder="ARG" minlength="3" maxlength="3">
             <button type="button" id="btnAgregarPaisFrontera">Agregar país</button>
             <% pais.fronteras.forEach(frontera => { %>
-                    <div class="inputAndBtnContainer">
-                        <input type="text" name="paisesFrontera[]" class="inputVector" 
-                        required minlength="3" maxlength="60" value="<%= frontera %>"> 
-                        <button type="button" class="btnQuitar">Quitar</button>
-                    </div>
-                    
+                <div class="inputAndBtnContainer">
+                    <input type="text" name="paisesFrontera[]" class="inputVector" 
+                    required minlength="3" maxlength="3" value="<%= frontera %>"> 
+                    <button type="button" class="btnQuitar">Quitar</button>
+                </div>
             <% }); %>
         </div>
         <label for="areaPais">Área</label>
@@ -28,12 +27,11 @@
             <input type="text" name="timezone" id="idTimezone" placeholder="UTC-05:00">
             <button type="button" id="btnAgregarTimezone">Agregar Timezone</button>
             <% pais.timezones.forEach(timezone => { %>
-                    <div class="inputAndBtnContainer">
-                        <input type="text" name="timezones[]" class="inputVector" 
-                        required minlength="3" maxlength="60" value="<%= timezone %>"> 
-                        <button type="button" class="btnQuitar">Quitar</button>
-                    </div>
-                    
+                <div class="inputAndBtnContainer">
+                    <input type="text" name="timezones[]" class="inputVector" 
+                    required minlength="3" maxlength="60" value="<%= timezone %>"> 
+                    <button type="button" class="btnQuitar">Quitar</button>
+                </div>
             <% }); %>
         </div>
         <input type="submit" value="Guardar">

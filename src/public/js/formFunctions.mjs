@@ -6,7 +6,7 @@ window.addEventListener("load", ()=>{
     const btnAgregarTimezone = document.querySelector("#btnAgregarTimezone");
     console.log(btnAgregarTimezone);
 
-     const agregarInputVector = (queryIdInputAgregar, queryIdDivContenedor, inputName) => {
+     const agregarInputVector = (queryIdInputAgregar, queryIdDivContenedor, inputName, minLength, maxLength) => {
         console.log("en agregarInputVector");
         //captura de elementos
         const inputParaAgregar = document.querySelector(queryIdInputAgregar);
@@ -63,10 +63,10 @@ window.addEventListener("load", ()=>{
      };
 
      btnAgregarPaisFrontera.addEventListener('click', ()=>{
-        agregarInputVector('#idPaisFrontera','#paisesFronteraContainer','paisesFrontera[]');
+        agregarInputVector('#idPaisFrontera','#paisesFronteraContainer','paisesFrontera[]', 3, 3);
     });
 
     btnAgregarTimezone.addEventListener('click', ()=> {
-        agregarInputVector('#idTimezone','#timezonesContainer','timezones[]');
+        agregarInputVector('#idTimezone','#timezonesContainer','timezones[]', 3, 10);
     });
 });

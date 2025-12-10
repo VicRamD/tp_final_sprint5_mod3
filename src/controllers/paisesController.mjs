@@ -49,30 +49,12 @@ export const obtenerTodosLosPaisesController = async (req, res) => {
 
 export const renderizarFormCrearNuevoPaiController = (req, res) => {
     console.log("en controlador - renderizarFormCrearNuevoPaiController");
-    res.render('addPais', {titulo: 'Nuevo País'});
+    res.render('addPais', {titulo: 'Nuevo País', camposErroneos: [], mensajesDeError: []});
 }
 
 export const crearNuevoPaisController = async (req, res) => {
     console.log("en controlador - crearNuevoPaisController");
     try {
-        /* 
-        * resultados de validación 
-        */
-        const errors = validationResult(req);
-        console.log("errors", errors);
-        if (!errors.isEmpty()) {
-            return res.status(400).json({
-                warning: 'Se detectaron errores en los valores ingresados',
-                errors: errors.array().map(error => {
-                    return {
-                        field: error.path,
-                        message: error.msg
-                    }
-                })
-            });
-        }
-        /*----------------------*/
-
         console.log("body", req.body);
         const datos = req.body;
         console.log(datos);
@@ -128,24 +110,6 @@ export const renderizarFormEditarPaisController = async (req, res) => {
 export const actualizarPaisController = async (req, res) => {
     console.log("en controlador - actualizarPaisController");
     try {
-        /* resultados de validaciones */
-        const errors = validationResult(req);
-        console.log(errors);
-        if (!errors.isEmpty()) {
-            return res.status(400).json({
-                warning: 'Se detectaron errores en los valores ingresados',
-                errors: errors.array().map(error => {
-                    return {
-                        field: error.path,
-                        message: error.msg
-                    }
-                })
-            });
-        }
-
-        /* ------------------ */
-
-        
         const {id} = req.params;
 
         console.log(req.body);
