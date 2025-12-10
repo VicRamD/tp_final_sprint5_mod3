@@ -1,5 +1,7 @@
+import {validationResult} from 'express-validator';
+
 import {consumirApiExternaDePaises, registrarPaisesAPI, obtenerTodosLosPaises,
-    obtenerPaisPorId, eliminarPaisPorID
+    obtenerPaisPorId, crearNuevoPais, actualizarPais, eliminarPaisPorID
 } from '../services/paisesService.mjs';
 import {mapearPaises} from '../models/mapearDatosApi.mjs';
 import {renderizarPaises} from '../views/responsiveView.mjs';
@@ -53,7 +55,42 @@ export const renderizarFormCrearNuevoPaiController = (req, res) => {
 export const crearNuevoPaisController = async (req, res) => {
     console.log("en controlador - crearNuevoPaisController");
     try {
-        console.log("aqui");
+        /* 
+        * resultados de validación 
+        */
+        const errors = validationResult(req);
+        console.log("errors", errors);
+        if (!errors.isEmpty()) {
+            return res.status(400).json({
+                warning: 'Se detectaron errores en los valores ingresados',
+                errors: errors.array().map(error => {
+                    return {
+                        field: error.path,
+                        message: error.msg
+                    }
+                })
+            });
+        }
+        /*----------------------*/
+
+        console.log("body", req.body);
+        const datos = req.body;
+        console.log(datos);
+        const datosPais = {
+            nombreComun: datos.nombreComunPais,
+            nombreOficial: datos.nombreOficialPais,
+            capital: datos.capitalPais,
+            fronteras: datos.paisesFrontera,
+            area: datos.areaPais,
+            poblacion: datos.poblacionPais,
+            timezones: datos.timezones ? datos.timezones : [],
+        };
+        console.log(datosPais);
+
+        const paisCreado = await crearNuevoPais(datosPais);
+        console.log(paisCreado);
+        
+        res.redirect('/api/paises');
     } catch(error){
         res.status(500).send({
             mensaje: 'Error en la creación de un nuevo país',
@@ -87,6 +124,10 @@ export const renderizarFormEditarPaisController = async (req, res) => {
             error: error.message
         });
     }
+}
+
+export const actualizarPaisController = async (req, res) => {
+    
 }
 
 /*--------------------------*/

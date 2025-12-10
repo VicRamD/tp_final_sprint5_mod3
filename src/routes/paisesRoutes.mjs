@@ -4,12 +4,14 @@ import {consumirAPIExternaDePaisesController, obtenerTodosLosPaisesController,
     renderizarFormCrearNuevoPaiController, crearNuevoPaisController, renderizarFormEditarPaisController, eliminarPaisPorIDController
 } from '../controllers/paisesController.mjs';
 
+import {paisValidator} from '../routes/validationRules.mjs';
+
 const router = express.Router();
 
 router.get('/paises/', obtenerTodosLosPaisesController);
 //crear país
 router.get('/paises/agregar', renderizarFormCrearNuevoPaiController);
-//router.post('/paises/agregar', crearNuevoPaisController);
+router.post('/paises/agregar', paisValidator, crearNuevoPaisController);
 
 router.get('/paises/:id/editar', renderizarFormEditarPaisController);
 

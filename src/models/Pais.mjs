@@ -2,8 +2,8 @@ import mongoose from "mongoose";
 
 //Esquema pais
 const paisSchema = new mongoose.Schema({
-    nombreComun: {type: String, required: true},
-    nombreOficial: String,
+    nombreComun: String,
+    nombreOficial: {type: String, required: true},
     capital: [String],
     fronteras: [String],
     area: Number,

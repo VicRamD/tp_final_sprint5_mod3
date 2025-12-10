@@ -24,7 +24,7 @@ class PaisRepository extends IRepository {
 
     async crearNuevoPais(datosPais) {
         console.log("En repository - crearNuevoPais");
-        return nuevoPais = await Pais.create({
+        return await Pais.create({
             nombreComun: datosPais.nombreComun,
             nombreOficial: datosPais.nombreOficial,
             capital: datosPais.capital,
@@ -32,6 +32,27 @@ class PaisRepository extends IRepository {
             area: datosPais.area,
             timezones: datosPais.timezones
         });
+    }
+
+    async actualizarPais(id, datosPais) {
+        console.log("En repository - actualizarPais");
+        //se guarda el resultado para saber si se actualizó algún super héroe
+        const resultado = await SuperHero.updateOne({_id: id}, {
+            $set: {
+                nombreComun: datosPais.nombreComun,
+                nombreOficial: datosPais.nombreOficial,
+                capital: datosPais.capital,
+                fronteras: datosPais.fronteras,
+                area: datosPais.area,
+                timezones: datosPais.timezones
+            }
+        });
+
+        if(resultado.matchedCount === 0) {
+            console.log("No se encontró un superhéroe con el id enviado");
+        } 
+        //recupera el heroe actualizado
+        return await Pais.findById(id);
     }
 
     async eliminarPaisPorID(id){

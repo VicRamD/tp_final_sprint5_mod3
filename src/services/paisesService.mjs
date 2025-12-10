@@ -31,6 +31,11 @@ export const crearNuevoPais = async (datosPais) => {
     return await PaisRepository.crearNuevoPais(datosPais);
 }
 
+export const actualizarPais = async (id, datosPais) => {
+    console.log("En servicios - actualizarPais");
+    return await PaisRepository.actualizarPais(id, datosPais);
+}
+
 export const eliminarPaisPorID = async (id) => {
     console.log("En servicios - crearNuevoPais");
     return await PaisRepository.eliminarPaisPorID(id);

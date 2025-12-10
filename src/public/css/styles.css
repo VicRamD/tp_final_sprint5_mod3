@@ -10,8 +10,35 @@ body {
     display: flex;
     flex-direction: column;
     /*justify-content: center;*/
-    align-items: center;
+    /*align-items: center;*/
 }
+
+/*Navbar*/
+nav {
+    width: 100%;
+}
+
+nav div {
+    width: 100%;
+}
+
+nav div ul{
+    width: 100%;
+}
+
+nav div ul li{
+    width: 100%;
+    padding: 5px;
+}
+
+nav div ul li a{
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+}
+
+/*---------------*/
 
 h1 {
     text-align: center;
@@ -24,6 +51,8 @@ h1 {
 #CDE4B3
 #D9CF85
 */
+
+/*Dashboard*/
 
 div.card {
     padding: 10px;
@@ -95,3 +124,57 @@ a.btn-edit {
   opacity: .5;
 }
 
+/* ------------- */
+
+/* Formularios */
+form#formPais {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+form label {
+    display: block;
+}
+
+input[type="text"], input[type="number"] {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+form#formPais input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+form#formPais input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+div#paisesFronteraContainer input[type="text"], div#timezonesContainer input[type="text"]{
+    margin-bottom: 0px;
+}
+
+form#formPais button[type="button"] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* ------------ */

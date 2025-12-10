@@ -1,6 +1,6 @@
 export const renderizarPais = (pais) =>{
-    console.log("En views - renderizarPais");
-    console.log("Datos previos:", pais);
+    //console.log("En views - renderizarPais");
+    //console.log("Datos previos:", pais);
 
     let nombre = "";
     if(pais.nombreOficial) {
