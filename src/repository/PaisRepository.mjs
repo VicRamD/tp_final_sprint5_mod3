@@ -30,6 +30,7 @@ class PaisRepository extends IRepository {
             capital: datosPais.capital,
             fronteras: datosPais.fronteras,
             area: datosPais.area,
+            poblacion: datosPais.poblacion,
             timezones: datosPais.timezones
         });
     }
@@ -37,13 +38,14 @@ class PaisRepository extends IRepository {
     async actualizarPais(id, datosPais) {
         console.log("En repository - actualizarPais");
         //se guarda el resultado para saber si se actualizó algún super héroe
-        const resultado = await SuperHero.updateOne({_id: id}, {
+        const resultado = await Pais.updateOne({_id: id}, {
             $set: {
                 nombreComun: datosPais.nombreComun,
                 nombreOficial: datosPais.nombreOficial,
                 capital: datosPais.capital,
                 fronteras: datosPais.fronteras,
                 area: datosPais.area,
+                poblacion: datosPais.poblacion,
                 timezones: datosPais.timezones
             }
         });

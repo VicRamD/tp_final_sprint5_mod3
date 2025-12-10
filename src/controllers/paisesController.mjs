@@ -106,9 +106,8 @@ export const crearNuevoPaisController = async (req, res) => {
  */
 
 export const renderizarFormEditarPaisController = async (req, res) => {
-    
+    console.log("en controlador - renderizarFormEditarPaisController");
     try {
-        console.log("en controlador - renderizarFormEditarPaisController");
         const {id} = req.params;
         //console.log(id);
         const pais = await obtenerPaisPorId(id); 
@@ -127,8 +126,57 @@ export const renderizarFormEditarPaisController = async (req, res) => {
 }
 
 export const actualizarPaisController = async (req, res) => {
-    
-}
+    console.log("en controlador - actualizarPaisController");
+    try {
+        /* resultados de validaciones */
+        const errors = validationResult(req);
+        console.log(errors);
+        if (!errors.isEmpty()) {
+            return res.status(400).json({
+                warning: 'Se detectaron errores en los valores ingresados',
+                errors: errors.array().map(error => {
+                    return {
+                        field: error.path,
+                        message: error.msg
+                    }
+                })
+            });
+        }
+
+        /* ------------------ */
+
+        
+        const {id} = req.params;
+
+        console.log(req.body);
+        const datos = req.body;
+        const datosPais = {
+            nombreComun: datos.nombreComunPais,
+            nombreOficial: datos.nombreOficialPais,
+            capital: datos.capitalPais,
+            fronteras: datos.paisesFrontera,
+            area: datos.areaPais,
+            poblacion: datos.poblacionPais,
+            timezones: datos.timezones ? datos.timezones : [],
+        };
+        console.log(datosPais);
+
+        const paisActualizado = await actualizarPais(id, datosPais);
+        console.log("Actualizar país", paisActualizado);
+
+        if(!paisActualizado){
+            return res.status(404).send({mensaje: 'País no encontrado'});
+        }  
+
+        res.redirect('/api/paises');
+
+    } catch (error) {
+        res.status(500).send({
+            mensaje: 'Error al actualizar un país',
+            error: error.message
+        });
+    }
+}  
 
 /*--------------------------*/
 

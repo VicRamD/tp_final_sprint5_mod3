@@ -20,5 +20,5 @@ export const paisValidator = [body('nombreComunPais').notEmpty().isString().trim
     .withMessage('paisesFrontera no es un array - formato incorrecto').escape(),
     //elementos del array poderes
     body('paisesFrontera.*').notEmpty().trim().isString().isLength({min: 3, max: 3})
-    .withMessage('El poder debe tener 3 carácteres que sean letras mayúsculas').escape()
+    .withMessage('El país fronterizo debe tener 3 carácteres que sean letras mayúsculas').escape()
 ]
