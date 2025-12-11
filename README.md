@@ -19,3 +19,13 @@
 * CSS
 
 ## Instrucciones para instalar:
+
+Para ejecutarse el proyecto necesita tener instalado NodeJS, y además instalar los siguientes módulos:
+
+* express (idem versión 5.2.1)
+* express-validator (el proyecto fue desarrollado con la versión 7.3.1)
+* mongoose (idem versión 9.0.1)
+* ejs (idem versión 3.1.10)
+* express-ejs-layouts (idem versión 2.5.1)
+* method-override (idem versión 3.0.0)
+
