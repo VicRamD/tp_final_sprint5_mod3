@@ -5,6 +5,8 @@
             <input type="text" name="nombreComunPais" id="nombreComunPais" value="<%= valoresRetornados.nombreComun %>">
         <% } else if (valoresRetornados.nombreComunPais) { %>
             <input type="text" name="nombreComunPais" id="nombreComunPais" value="<%= valoresRetornados.nombreComunPais %>">
+        <% } else { %>
+            <input type="text" name="nombreComunPais" id="nombreComunPais" value="">
         <% } %>
         <p class="errorMesage">
             <%= camposErroneos && camposErroneos.includes("nombreComunPais") ? mensajesDeError[camposErroneos.indexOf("nombreComunPais")] : '' %>
@@ -15,6 +17,8 @@
             <input type="text" name="nombreOficialPais" id="nombreOficialPais" value="<%= valoresRetornados.nombreOficial %>" required>
         <% } else if (valoresRetornados.nombreOficialPais) { %>
             <input type="text" name="nombreOficialPais" id="nombreOficialPais" value="<%= valoresRetornados.nombreOficialPais %>" required>
+        <% } else { %>
+            <input type="text" name="nombreOficialPais" id="nombreOficialPais" value="" required>
         <% } %> 
         <p class="errorMesage">
             <%= camposErroneos && camposErroneos.includes("nombreOficialPais") ? mensajesDeError[camposErroneos.indexOf("nombreOficialPais")] : '' %>
@@ -25,6 +29,8 @@
             <input type="text" name="capitalPais" id="capitalPais" value="<%= valoresRetornados.capital %>">
         <% } else if (valoresRetornados.capitalPais) { %>
             <input type="text" name="capitalPais" id="capitalPais" value="<%= valoresRetornados.capitalPais %>">
+        <% } else { %>
+            <input type="text" name="capitalPais" id="capitalPais" value="">
         <% } %>
         <p class="errorMesage">
             <%= camposErroneos && camposErroneos.includes("capitalPais") ? mensajesDeError[camposErroneos.indexOf("capitalPais")] : '' %>
@@ -66,6 +72,8 @@
             <input type="number" name="areaPais" id="areaPais" value="<%= valoresRetornados.area %>">
         <% } else if (valoresRetornados.areaPais) { %>
             <input type="number" name="areaPais" id="areaPais" value="<%= valoresRetornados.areaPais %>">
+        <% } else { %>
+            <input type="number" name="areaPais" id="areaPais" value="">
         <% } %>
         <p class="errorMesage">
             <%= camposErroneos && camposErroneos.includes("areaPais") ? mensajesDeError[camposErroneos.indexOf("areaPais")] : '' %>
@@ -76,6 +84,8 @@
             <input type="number" name="poblacionPais" id="poblacionPais" value="<%= valoresRetornados.poblacion %>">
         <% } else if (valoresRetornados.poblacionPais) { %>
             <input type="number" name="poblacionPais" id="poblacionPais" value="<%= valoresRetornados.poblacionPais %>">
+        <% } else { %>
+            <input type="number" name="poblacionPais" id="poblacionPais" value="">
         <% } %>
         <p class="errorMesage">
             <%= camposErroneos && camposErroneos.includes("poblacionPais") ? mensajesDeError[camposErroneos.indexOf("poblacionPais")] : '' %>

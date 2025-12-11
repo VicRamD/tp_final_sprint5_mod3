@@ -10,6 +10,8 @@ import expressLayouts from 'express-ejs-layouts';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
+import {renderizarLandingPage} from './controllers/paisesController.mjs';
+
 const app = express();
 const PORT = process.env.PORT || 3000;
 
@@ -51,6 +53,9 @@ app.set('layout', 'layout') //archivo base de layout
 app.use(express.static(path.join(__dirname, 'public')));
 
 /*-------------------------------- */
+
+//pagina de incio
+app.get('/', renderizarLandingPage);
 
 //configuración de rutas
 app.use('/api', paisesRoutes);

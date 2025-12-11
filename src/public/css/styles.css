@@ -29,6 +29,8 @@ nav div ul{
 nav div ul li{
     width: 100%;
     padding: 5px;
+    list-style: none;
+    background-color: #a3e73c;
 }
 
 nav div ul li a{
@@ -40,25 +42,87 @@ nav div ul li a{
 
 /*---------------*/
 
+/* Footer */
+footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+footer div {
+  display: flex;
+  flex-direction: column;
+}
+
+footer div p{
+  margin: 3px 0px;
+}
+
+/* -------------------- */
+
 h1 {
     text-align: center;
 }
 
-/* Colores
-#69D0B3
-#9BDAB3
-#B4DFB3
-#CDE4B3
-#D9CF85
-*/
+/* Home */
+
+div.portadaContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+div.portadaContainer img {
+  max-width: 400px;
+}
+
+div.portadaContainer a {
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  padding: 13px 20px 13px;
+  outline: 0;
+  border: 1px solid black;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+div.portadaContainer a:after {
+  content: "";
+  background-color: #ffe54c;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+  transition: 0.2s;
+}
+
+div.portadaContainer a:hover:after {
+  top: 0px;
+  left: 0px;
+}
+
+/* ------------------ */
+
 
 /*Dashboard*/
+
+main div.direccion {
+  display: flex;
+    flex-direction: column;
+  }
 
 div.card {
     padding: 10px;
     width: 100%;
     border-width: 4px;
-    border-style: solid;
     border-style: solid dotted solid dotted;
     border-radius: 15px;
     margin: 10px 0px;
@@ -67,6 +131,17 @@ div.card {
 
 div.card li {
     list-style: none;
+}
+
+div.botonesContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+div.botonesContainer a,  div.botonesContainer form{
+  width: 40%;
 }
 
 a.btn-edit {
@@ -183,3 +258,41 @@ p.errorMesage {
 }
 
 /* ------------ */
+
+@media (min-width: 768px) {
+  div.portadaContainer a {
+    padding: 13px 50px 13px;
+  }
+  /*Navbar*/
+  nav div ul {
+    display: flex;
+    flex-direction: row;
+  }
+
+  nav div ul li{
+      width: 25%;
+      padding: 5px;
+  }
+
+  nav div ul li a{
+      width: 100%;
+      display: inline-block;
+      text-align: center;
+      text-decoration: none;
+  }
+
+  /*---------------*/
+}
+
+@media (min-width: 1020px) {
+  main div.direccion {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  div.card {
+    width: 20%;
+    margin: 4px 1px;
+  }
+}

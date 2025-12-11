@@ -6,6 +6,10 @@ import {consumirApiExternaDePaises, registrarPaisesAPI, obtenerTodosLosPaises,
 import {mapearPaises} from '../models/mapearDatosApi.mjs';
 import {renderizarPaises} from '../views/responsiveView.mjs';
 
+export const renderizarLandingPage = (req, res) => {
+    res.render('home', {titulo: "Países de Hispanoamérica"});
+}
+
 export const consumirAPIExternaDePaisesController = async (req, res) => {
     try {
         console.log("En controladores - consumirAPIExternaDePaisesController");
