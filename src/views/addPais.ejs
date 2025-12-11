@@ -65,7 +65,7 @@
             <% if (typeof valoresRetornados !== 'undefined' && valoresRetornados.timezones) { %>
                 <% valoresRetornados.timezones.forEach(timezone => { %>
                     <div class="inputAndBtnContainer">
-                        <input type="text" name="paisesFrontera[]" class="inputVector" 
+                        <input type="text" name="timezones[]" class="inputVector" 
                         required minlength="3" maxlength="60" value="<%= timezone %>"> 
                         <button type="button" class="btnQuitar">Quitar</button>
                     </div>   

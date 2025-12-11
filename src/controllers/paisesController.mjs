@@ -10,6 +10,10 @@ export const renderizarLandingPage = (req, res) => {
     res.render('home', {titulo: "Países de Hispanoamérica"});
 }
 
+export const renderizarAbout = (req, res) => {
+    res.render('about', {titulo: "Acerca De"});
+}
+
 export const consumirAPIExternaDePaisesController = async (req, res) => {
     try {
         console.log("En controladores - consumirAPIExternaDePaisesController");

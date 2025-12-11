@@ -111,6 +111,17 @@ div.portadaContainer a:hover:after {
 
 /* ------------------ */
 
+/* About */ 
+
+div.about {
+  text-align: center;
+}
+
+div.about p {
+  margin: 5px 0px;
+}
+
+/* -------------------*/
 
 /*Dashboard*/
 

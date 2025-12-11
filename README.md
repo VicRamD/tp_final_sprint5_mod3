@@ -35,3 +35,9 @@ Ejecutar cualquiera de los siguientes comandos:
 `node src/app.mjs` o `npm test`
 
 Tras eso el serivdor escuchará en el puerto 3000
+
+* Ingresando en http://localhost:3000/ verá la landing page.
+* Desde ahí con el navbar puede moverse en el sitio.
+* Cuando apenas comienza puede cargar datos en su base de datos con la ruta http://localhost:3000/externa/datos (no accesible desde el navbar), en dicho endpoint se consume la api externa "Restcountries"
+* El dashborad (http://localhost:3000/api/paises/) muestra todos los países registrados y permite editarlos y/o eliminarlos
+* El formulario para registrar un nuevo país se encuentra en http://localhost:3000/api/paises/agregar
