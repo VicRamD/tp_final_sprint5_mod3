@@ -10,3 +10,12 @@
 * Manejar peticiones a un servidor (get, post, put y delete).
 * Crear vistas para la interfaz web.
 * Realizar validaciones de datos enviados por un formulario
+
+## Tecnologías utilizadas:
+
+* NodeJS
+* Express
+* EJS
+* CSS
+
+## Instrucciones para instalar:
