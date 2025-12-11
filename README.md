@@ -20,7 +20,7 @@
 
 ## Instrucciones para instalar:
 
-Para ejecutarse el proyecto necesita tener instalado NodeJS, y además instalar los siguientes módulos:
+Para ejecutarse el proyecto necesita tener instalado NodeJS, y además instalar los siguientes módulos con el comando npm install:
 
 * express (idem versión 5.2.1)
 * express-validator (el proyecto fue desarrollado con la versión 7.3.1)
@@ -29,3 +29,9 @@ Para ejecutarse el proyecto necesita tener instalado NodeJS, y además instalar 
 * express-ejs-layouts (idem versión 2.5.1)
 * method-override (idem versión 3.0.0)
 
+## Pasos de ejecución:
+
+Ejecutar cualquiera de los siguientes comandos:
+`node src/app.mjs` o `npm test`
+
+Tras eso el serivdor escuchará en el puerto 3000
