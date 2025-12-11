@@ -98,7 +98,7 @@ export const renderizarFormEditarPaisController = async (req, res) => {
             return res.status(404).send({mensaje: 'Pais no encontrado'});
         }    
 
-        res.render('editPais', {pais, titulo: 'Editar Pais'});
+        res.render('editPais', {valoresRetornados: pais, titulo: 'Editar Pais', camposErroneos: [], mensajesDeError: []});
     } catch (error) {
         res.status(500).send({
             mensaje: 'Error al buscar país',
