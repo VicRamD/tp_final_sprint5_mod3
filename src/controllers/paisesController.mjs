@@ -74,6 +74,7 @@ export const crearNuevoPaisController = async (req, res) => {
             area: datos.areaPais,
             poblacion: datos.poblacionPais,
             timezones: datos.timezones ? datos.timezones : [],
+            creador: "RAMIREZ DIAZ VICTOR FRANCISCO"
         };
         console.log(datosPais);
 

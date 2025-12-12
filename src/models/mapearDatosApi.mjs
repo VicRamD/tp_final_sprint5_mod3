@@ -21,7 +21,7 @@ export const mapearPais = (pais) =>{
     return {
         nombreComun,
         nombreOficial,
-        capital: pais.capital,
+        capital: pais.capital[0],
         fronteras: pais.borders,
         area: pais.area,
         poblacion: pais.population,

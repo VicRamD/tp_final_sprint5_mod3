@@ -12,7 +12,9 @@ class PaisRepository extends IRepository {
 
     async obtenerTodosLosPaises(){
         console.log("En repository - obtenerTodosLosPaises");
-        return await Pais.find({capital: {$exists: true}}); 
+        return await Pais.find({creador: "RAMIREZ DIAZ VICTOR FRANCISCO",
+            capital: {$exists: true}
+        }); 
         //exist pregunta si tiene el atributo capital, para que no devuelva registros de héroes
     }
 
