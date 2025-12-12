@@ -60,13 +60,14 @@
         
         <div id="timezonesContainer" class="w-full">
             <label for="idTimezone">Timezones</label>
-            <input type="text" name="timezone" id="idTimezone" placeholder="UTC-05:00">
+            <input type="text" name="timezone" id="idTimezone" placeholder="UTC-05:00" 
+            pattern="^UTC-\d{2}:\d{2}$" title="El formato requerido: UTC-HH:MM (ej. UTC-05:00)">
             <button type="button" id="btnAgregarTimezone">Agregar Timezone</button>
             <% if (typeof valoresRetornados !== 'undefined' && valoresRetornados.timezones) { %>
                 <% valoresRetornados.timezones.forEach(timezone => { %>
                     <div class="inputAndBtnContainer">
                         <input type="text" name="timezones[]" class="inputVector" 
-                        required minlength="3" maxlength="60" value="<%= timezone %>"> 
+                        required minlength="3" maxlength="60" value="<%= timezone %>" pattern="^UTC-\d{2}:\d{2}$" title="El formato requerido: UTC-HH:MM (ej. UTC-05:00)">
                         <button type="button" class="btnQuitar">Quitar</button>
                     </div>   
                 <% }); %>

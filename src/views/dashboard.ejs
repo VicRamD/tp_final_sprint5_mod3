@@ -5,10 +5,10 @@
                 <ul>
                     <li><strong>Nombre:</strong> <%= pais.nombre %></li>
                     <li><strong>Capital:</strong> <%= pais.capital %></li>
-                    <li><strong>Países Frontera:</strong> <%= pais.paisesFrontera %></li>
+                    <li><strong>Países Frontera:</strong> <%= pais.paisesFrontera.join(', ') %></li>
                     <li><strong>Área:</strong> <%= pais.area %> </li>
                     <li><strong>Población:</strong> <%= pais.poblacion %></li>
-                    <li><strong>Timezones:</strong> <%= pais.timezones %></li>
+                    <li><strong>Timezones:</strong> <%= pais.timezones.join(', ') %></li>
                     <li><strong>Creador:</strong> <%= pais.creador %></li>
                 </ul>
                 <div class="botonesContainer">
