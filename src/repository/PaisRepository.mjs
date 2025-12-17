@@ -33,7 +33,8 @@ class PaisRepository extends IRepository {
             fronteras: datosPais.fronteras,
             area: datosPais.area,
             poblacion: datosPais.poblacion,
-            timezones: datosPais.timezones
+            timezones: datosPais.timezones,
+            creador: datosPais.creador
         });
     }
 
